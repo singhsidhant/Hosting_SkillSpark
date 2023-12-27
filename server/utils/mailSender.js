@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const mailSender = async (email, title, body) => {
+const mailSender = async (email, title,body) => {
     try{
         let transporter = nodemailer.createTransport({
             host : process.env.MAIL_HOST,
@@ -12,9 +12,9 @@ const mailSender = async (email, title, body) => {
         })
 
         let info = await transporter.sendMail({
-            from: 'StudyNotion ||  by DHRUV',
+            from: 'SkillSpark ||  by SIDHANT',
             to:`${email}`,
-            subject: `${title}`,
+            subject: `Mail by SkiilSpark Organization`,
             html: `${body}`,
         });
         console.log(info);
