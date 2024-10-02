@@ -1,3 +1,12 @@
+/*
+ * Filename: d:\LMS\src\components\core\Dashboard\AddCourse\CourseInformation\CourseInformationForm.jsx
+ * Path: d:\LMS
+ * Created Date: Tuesday, July 2nd 2024, 8:48:04 pm
+ * Author: Sidhant Singh
+ * 
+ * Copyright (c) 2024 Trinom Digital Pvt Ltd
+ */
+
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { toast } from "react-hot-toast"
@@ -226,7 +235,7 @@ export default function CourseInformationForm() {
           Course Category <sup className="text-pink-200">*</sup>
         </label>
         <select
-          {...register("courseCategory", { required: true })}
+          {...register("courseCategory")} 
           defaultValue=""
           id="courseCategory"
           className="form-style w-full"

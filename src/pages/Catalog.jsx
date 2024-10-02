@@ -1,3 +1,12 @@
+/*
+ * Filename: d:\LMS\src\pages\Catalog.jsx
+ * Path: d:\LMS
+ * Created Date: Tuesday, July 2nd 2024, 8:48:04 pm
+ * Author: Sidhant Singh
+ * 
+ * Copyright (c) 2024 Trinom Digital Pvt Ltd
+ */
+
 import React, { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
@@ -28,7 +37,7 @@ function Catalog() {
         )[0]._id
         setCategoryId(category_id)
       } catch (error) {
-        console.log("Could not fetch Categories.", error)
+        console.log("Could not fetch Categories in catalog.", error)
       }
     })()
   }, [catalogName])

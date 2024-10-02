@@ -1,3 +1,12 @@
+/*
+ * Filename: d:\LMS\src\components\common\Navbar.jsx
+ * Path: d:\LMS
+ * Created Date: Tuesday, July 2nd 2024, 8:48:04 pm
+ * Author: Sidhant Singh
+ * 
+ * Copyright (c) 2024 Trinom Digital Pvt Ltd
+ */
+
 import { useEffect, useRef, useState } from "react"
 import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai"
 import { BsChevronDown } from "react-icons/bs"
@@ -36,21 +45,25 @@ function Navbar() {
       // console.log("Befor fetching categories");
       try {
         // console.log("Befor fetching categories");
+        // const res = await apiConnector("GET", "http://localhost:4000/api/v1/course/showAllCategories")
+        console.log('the api is ', categories.CATEGORIES_API); 
         const res = await apiConnector("GET", categories.CATEGORIES_API)
-        setSubLinks(res.data.data)
-        // console.log(res.data.data);
+
+        setSubLinks(res?.data?.data)
+        // setSubLinks(res)
+        console.log('He is the ', res); 
       } catch (error) {
         console.log("Could not fetch Categories.", error)
       }
       console.log("Ater fetching categories");
       setLoading(false)
-    })()
+    })() 
   }, [])
 
-  console.log("sub links", subLinks)
-  console.log("length",subLinks.length);
-  console.log("All subLinks:", subLinks);
-  console.log("Filtered subLinks:", subLinks?.filter(subLink => subLink?.courses?.length > 0));
+  // console.log("sub links", subLinks)
+  // console.log("length",subLinks.length);
+  // console.log("All subLinks:", subLinks);
+  // console.log("Filtered subLinks:", subLinks?.filter(subLink => subLink?.courses?.length > 0));
 
   const matchRoute = (route) => {
     return matchPath({ path: route }, location.pathname)
